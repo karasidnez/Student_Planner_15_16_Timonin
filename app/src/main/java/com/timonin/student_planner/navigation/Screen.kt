@@ -1,11 +1,16 @@
 package com.timonin.student_planner.navigation
 
-sealed class Screen(val route: String){
+sealed class Screen(val route: String) {
     object Home : Screen("home")
-    object Profile : Screen("profile")
-    object Settings : Screen("settings")
-    object Details : Screen("details/{subjectId}"){
+    object Details : Screen("details/{subjectId}") {
         fun createRoute(subjectId: String) = "details/$subjectId"
     }
+    object Profile : Screen("profile")
+    object Settings : Screen("settings")
 
+    // Новые экраны
+    object Schedule : Screen("schedule")
+    object LessonDetail : Screen("lesson/{lessonId}") {
+        fun createRoute(lessonId: String) = "lesson/$lessonId"
+    }
 }

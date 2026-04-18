@@ -20,14 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Student_PlannerTheme {
                 val navController = rememberNavController()
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    StudentPlannerNavHost(
-                        navController = navController,
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+                StudentPlannerNavHost(navController = navController)
+            }}}}
+
 
